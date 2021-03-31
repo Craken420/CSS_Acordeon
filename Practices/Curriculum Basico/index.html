@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Curriculum Basico</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    
+</head>
+<body class="position-fixed d-flex flex-column text-white bg-red">
+    <header class="page-header">
+        <nav class="d-flex justify-content-between">
+            <a href="" class="logo">LOGO</a>
+            <ul class="d-flex">
+                <li>
+                    <a href="">Habilidades</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h1 class="position-absolute w-100 text-center heading">Encabezado</h1>
+    <a class="position-absolute contact" href="mailto:luis.p.z@hotmail.com">luis.p.z@hotmail.com</a>
+    <section class="position-absolute d-flex align-items-center justify-content-center text-black bg-white skills-section" data-slideIn="to-bottom">
+        <button class="position-absolute skills-close" arial-label="Close Skills Section">X</button>
+        <div class="d-flex chart-wrapper">
+            <ul class="chart-levels">
+                <li>Experto</li>
+                <li>Avanzado</li>
+                <li>Intermedio</li>
+                <li>Principiante</li>
+                <li>Novato</li>
+            </ul>
+            <ul class="d-flex justify-content-around align-items-end flex-grow-1 text-center bg-black chart-skills">
+                <li class="position-relative bg-red" data-height="80%">
+                    <span class="w-100 position-absolute">HTML</span>
+                </li>
+                <li class="position-relative bg-red" data-height="60%">
+                    <span class="w-100 position-absolute" data-height="80%">CSS</span>
+                </li>
+                <li class="position-relative bg-red" data-height="70%">
+                    <span class="w-100 position-absolute">JavaScript</span>
+                </li>
+                <li class="position-relative bg-red" data-height="55%">
+                    <span class="w-100 position-absolute">PHP</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <script>
+        const skillsLink = document.querySelector(".page-header li:nth-child(1) a");
+        const skillsClose = document.querySelector(".skills-close");
+        const windowOpened = "window-opened";
+
+        skillsLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.body.classList.toggle(windowOpened);
+        });
+
+        skillsClose.addEventListener("click", () => {
+            document.body.classList.toggle(windowOpened);
+        });
+    </script>
+</body>
+</html>
