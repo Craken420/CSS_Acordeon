@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+		}
+
+		body {
+			padding: 20px;
+			background-color: #f1f1f1;
+		}
+
+		.row::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+
+		.column {
+			float: left;
+			width: 33.33%;
+			padding: 15px;
+			height: 300px;
+			background-color: #ddd;
+		}
+
+		.container {
+			width: 100%;
+			height: 100%;
+			padding: 10px;
+			background-color: green;
+			position: relative;
+			border-radius: 2%;
+		}
+
+		.fakeimg {
+			width: 100%;
+			height: 100%;
+			padding: 10px;
+			background-color: #aaa;
+			border-radius: 2%;
+		}
+
+		.overlay {
+			position: absolute;
+	        top: 0;
+	        bottom:0;
+	        right: 0;
+	        left: 0;
+	        width: 100%;
+	        height: 100%;
+	        opacity: 0;
+	        padding: 10px;
+	        border: 10px solid green;
+	        background-color: rgb(94, 94, 180);
+	        border-radius: 2%;
+		}
+
+		.container:hover .overlay {
+			opacity: 1;
+		}
+
+		.text {
+			position: absolute;
+			color: white;
+			font-size: 50px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.meadle {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 1;
+			transition: 3s ease;
+			opacity: 0;
+		}
+
+		.fakeimg2 {
+			transition: 3s ease;
+			opacity: 1;
+			display: block;
+			width: 100%;
+			height: 100%;
+			padding: 10px;
+			background-color: #aaa;
+			backface-visibility: hidden;
+		}
+
+		.text2 {
+			color: white;
+			font-size: 50px;
+			padding: 15px 20px;
+			text-align: center;
+			background-color: green;
+		}
+
+		.container:hover .meadle {
+			opacity: 1;
+		}
+		.container:hover .fakeimg2 {
+			opacity: 0.6;
+		}
+
+
+
+		.meadle2 {
+			position: absolute;
+			bottom: 100%;
+			left: 0;
+			right: 0;
+			
+			z-index: 1;
+			transition: 3s ease;
+			opacity: 0;
+		}
+
+		.fakeimg3 {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		.text3 {
+			color: white;
+			font-size: 50px;
+			padding: 15px 20px;
+			background-color: green;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+	</style>
+</head>
+<body>
+	<h1>This is the header of the content</h1>
+	<div class="row">
+		<div class="column">
+			<div class="container">
+				<div class="fakeimg">Hola</div>
+				<div class="overlay">
+					<div class="text">Text</div>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="container">
+				<div class="fakeimg2">Hola</div>
+				<div class="meadle">
+					<div class="text2">Text</div>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="container">
+				<div class="fakeimg">Hola</div>
+				<div class="overlay">
+					<div class="text">Text</div>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="container">
+				<div class="fakeimg">Hola</div>
+				<div class="overlay">
+					<div class="text">Text</div>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="container">
+				<div class="fakeimg">Hola</div>
+				<div class="overlay">
+					<div class="text">Text</div>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="container">
+				<div class="fakeimg">Hola</div>
+				<div class="overlay">
+					<div class="text">Text</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

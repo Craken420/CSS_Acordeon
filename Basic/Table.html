@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.table1 table, .table1 th, .table1 td {
+  border: 1px solid black;
+}
+
+.table1 table {
+  width: 100%;
+}
+.table1 th {
+  height: 70px;
+  text-align: left;
+  background-color: #4CAF50;
+}
+.table1 td {
+  text-align: center;
+}
+
+.table1 tr:nth-child(even) {background-color: #c2c2c2;} /*cuidar oreden*/
+.table1 tr:hover {background-color: red; } /*cuidar oreden*/
+
+.table2 table, .table2 td, .table2 th {
+  border: 1px solid black;
+}
+
+.table2 table {
+  width: 70%;
+  border-collapse: collapse;
+}
+
+.table3 table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.table4 table, .table4 td, .table4 th {
+  border: 1px solid black;
+}
+
+.table4 table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table4 td {
+  height: 50px;
+  vertical-align: bottom;
+}
+
+.table5 table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table5 th, .table5 td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+</style>
+</head>
+<body>
+<div class="table1" style="overflow-x:auto;">
+  <h2>Full-width Table: tr:hover, diseño = tr:nth-child(even), text-align + Responsive: scrollbar</h2>
+  <table>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+    </tr>
+    <tr>
+      <td>Peter</td>
+      <td>Griffin</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Lois</td>
+      <td>Griffin</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Lois</td>
+      <td>Griffin</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+    </tr>
+  </table>
+</div>
+<div class="table2">
+  <h2>Full-width Table border-collapse + No Responsive</h2>
+  <table>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+    </tr>
+    <tr>
+      <td>Peter</td>
+      <td>Griffin</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Lois</td>
+      <td>Griffin</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+    </tr>
+  </table>
+</div>
+<div class="table3">
+  <h2>Single Border Around The Table</h2>
+  <table>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+    </tr>
+    <tr>
+      <td>Peter</td>
+      <td>Griffin</td>
+    </tr>
+    <tr>
+      <td>Lois</td>
+      <td>Griffin</td>
+    </tr>
+  </table>
+</div>
+<div class="table4">
+  <h2>Vertical Alignment: Bottom</h2>
+  <table>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+    </tr>
+    <tr>
+      <td>Peter</td>
+      <td>Griffin</td>
+    </tr>
+    <tr>
+      <td>Lois</td>
+      <td>Griffin</td>
+    </tr>
+  </table>
+</div>
+<div class="table5">
+  <h2>Bordered Table Dividers</h2>
+  <table>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+    </tr>
+    <tr>
+      <td>Peter</td>
+      <td>Griffin</td>
+    </tr>
+    <tr>
+      <td>Lois</td>
+      <td>Griffin</td>
+    </tr>
+  </table>
+</div>
+</div>
+</div>
+</body>
+</html>

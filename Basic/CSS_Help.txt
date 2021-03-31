@@ -1,0 +1,529 @@
+-webkit /* Chrome, Safari, Opera */
+-moz	/* Firefox */
+-ms 	/* IE 9 */
+
+CSS Backgrounds:
+	opacity: 0.3;
+	background-color: green;
+					  hsl(120, 100%, 50%)  			-> green
+					  hsla(120, 100%, 50%, 0.3) 	-> green with opacity
+					  rgb(255,0,0);opacity:0.6;}    -> red with opacity
+	/*--*/
+	CSS Linear Gradients: (direction, color-stop1, color-stop2, ...)
+		background-image: linear-gradient(red, yellow)					-> Top to Bottom (default)
+						  (to right, red , yellow)             			-> Left to Right
+						  (to bottom right, red, yellow)      			-> Diagonal
+						  (angle, color-stop1, color-stop2)
+							(180deg, red, yellow) 			  			-> Angules
+						  (to right, rgba(255,0,0,0), rgba(255,0,0,1))	-> Transparency
+						  (to right, red,orange,yellow,green,blue,indigo,violet) -> Multicolors
+		repeating-linear-gradient(red, yellow 10%, green 20%)				  -> Repeating linear-gradient: 
+	/*--*/	
+	CSS Radial Gradients: radial-gradient(shape size at position, start-color, ..., last-color)
+		background-image: radial-gradient(red, yellow, green); -> Default)
+							(red 5%, yellow 15%, green 60%);   -> Differently Spaced
+							(circle, red, yellow, green)
+		/*--*/
+		Different Size Keywords (closest-side, farthest-side, closest-corner, farthest-corner):
+			radial-gradient(closest-side at 60% 55%, red, yellow, black);
+			repeating-radial-gradient(red, yellow 10%, green 15%);
+	/*--*/
+	background: rgba(0, 128, 0, 0.3)
+	background-image: url("paper.gif");
+	background-image: linear-gradient(red, yellow);
+	/*--*/
+	background-image: url("gradient_bg.png");
+  	background-repeat: repeat-x;
+  	background-repeat: no-repeat;
+  	/*--*/
+  	background-image: url("img_tree.png");
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-attachment: fixed;
+  	/*--*/
+	background-image: url("img_tree.png");
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-attachment: (scroll, fixed, local, initial, inherit)
+	/*--*/
+	background-size: 100px 80px; (contain, cover)
+	background-origin: (padding-box, content-box, border-box); -> background image position.
+	background-clip: (padding-box, content-box, border-box);   -> painting area of the background.
+	2 backgrounds:
+		#div.example1
+			background-image: url(img_flwr.gif), url(paper.gif);
+			background-position: right bottom, left top;
+			background-repeat: no-repeat, repeat;
+			padding: 15px;
+		#div.example2
+			background: url(img_tree.gif) left top no-repeat,
+						url(img_flwr.gif) right bottom no-repeat,
+						url(paper.gif) left top repeat;
+			padding: 15px;
+			background-size: 50px, 130px, auto;
+	FULL SIZE:
+		background: url(img_man.jpg) no-repeat center fixed;
+		background-size: cover;
+		
+				
+	ShortHand: background: #ffffff url("img_tree.png") no-repeat right top;
+						   color, image, repeat, attachment, position
+			   background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+CSS Borders:
+	border-style: (dotted, dashed, solid, double, roove, ridge, inset, outset, none, hidden)
+	border-width: 5px;
+	border-height: 25px 10px 4px 35px; (medium, thin, top, right, bottom, left)
+	border-color: green;
+	SHORT: border: 6px solid red;
+	border-radius: 5px;
+	border-radius: 15px 50px 30px 5px;
+	border-image: url(border.png) 30 round;
+		border: 10px solid transparent;
+
+CSS Margin:
+	margin: 25px 50px 75px 100px; (top, right, bottom, left)
+
+CSS Padding:
+	padding: 25px 50px 75px 100px; (top, right, bottom, left)
+
+CSS Height and Width:
+	width: auto (initial: "default", inherit, length: px, cm etc., %)
+	max-width: 800px;
+
+CSS Outline:
+	outline-color: red;
+	outline-width: 5px; (medium, thin);
+	outline-offset: 15px; /-> Aleja del borde
+	outline
+	outline-style: (dotted, dashed, solid, double, roove, ridge, inset, outset, none, hidden)
+
+CSS Text:
+	color: blue;
+	text-align: (justify, center, left, right);
+	vertical-align: (top, middle, bottom);
+  	text-decoration: (none, overline, line-through, underline)
+  	text-transform: (uppercase, lowercase, capitalize);
+	text-indent: 50px;
+	letter-spacing: 3px;
+	line-height: 1.8;
+	word-spacing: 10px;
+	white-space: nowrap;
+	text-shadow: 2px 2px 5px red; (x, y, blur_effect, color)
+	text-overflow: ellipsis; (algo...)
+
+	Text Direction;
+		direction: rtl;
+  		unicode-bidi: bidi-override;
+CSS Shadow Effects
+	text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;		 				-> Multiple Shadows
+	color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;		
+	box-shadow: 10px 10px grey;
+		0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+CSS Text Effects:
+	word-wrap: break-word;   -> Rompe palabras largas
+	word-break:
+		keep-all 	-> Rompe con la parabra completa
+		break-all   -> Rompe con cualquier letra
+	writing-mode: (horizontal-tb, vertical-rl)
+
+CSS Fonts:
+	font-family: "Times New Roman", Times, serif;
+	font-family: Arial, Helvetica, sans-serif;
+	font-family: "Lucida Console", "Courier New", monospace;
+	font-style: (normal, italic, oblique)
+	font-weight: (normal, lighter, bold, 900)
+	font-variant: (normal, small-caps)
+	font-size: 10vw
+	Shorthand:	
+		font: italic small-caps bold 12px/30px Georgia, serif;
+
+	Google Fonts:
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+			font-family: "Audiowide", sans-serif;
+			font-family: "Sofia", sans-serif;
+			font-family: "Trirong", serif;
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+  			font-family: "Sofia", sans-serif;
+
+  		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+		  font-family: "Sofia", sans-serif;
+		  font-size: 30px;
+		  class="font-effect-neon" (font-effect-outline, font-effect-emboss, font-effect-shadow-multiple)
+
+CSS Web Fonts
+	@font-face
+		font-family: myFirstFont;
+		src: url(sansation_light.woff);
+	div
+		font-family: myFirstFont;
+		
+CSS Icons:
+	Font Awesome Icons
+		<script src="https://kit.fontawesome.com/yourcode.js"></script>
+			class="fas fa-cloud" (fas fa-heart, fas fa-car, fas fa-file, fas fa-bars),
+								 (far fa-heart, far fa-car, far fa-file, far fa-bars)
+
+	Bootstrap Icons
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<i class="glyphicon glyphicon-cloud">
+			(glyphicon glyphicon-remove, glyphicon glyphicon-user, glyphicon glyphicon-envelope, glyphicon glyphicon-thumbs-up)
+
+	Google Icons
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<i class="material-icons">cloud</i>(material-icons, material-icons, material-icons, material-icons)
+
+CSS Links:
+	a:link - Sin visitar
+	a:visited - Visitado
+	a:hover - Al moverlo sobre
+	a:active - Clickeado
+
+CSS Lists
+	ul.a {
+	  list-style-type: (circle, square, upper-roman, lower-alpha);
+	  list-style-image: url('sqpurple.gif');
+	  list-style-position: (outside, inside)
+	  Shorthand: list-style: square inside url("sqpurple.gif"); // tipo, posición imagen
+	}
+	Ejemplo backgrounds:
+		ol { background: #ff9999;  padding: 20px; }
+		ul { background: #3399ff; padding: 20px;}
+		ol li { background: #ffe5e5; padding: 5px; margin-left: 35px;}
+		ul li { background: #cce5ff; margin: 5px;}
+
+CSS Tables:
+	table, td, th {
+	  border: 1px solid black;
+	}
+	table {
+	   width: 100%;
+	   border-collapse: collapse;
+	   border: 1px solid black;
+	}
+	th, td {
+	  padding: 8px;
+	  text-align: left;
+	  border-bottom: 1px solid #ddd;
+	}
+	th {
+	  background-color: #4CAF50;
+	  color: white;
+	  height: 70px;
+	}
+	td {
+	  height: 50px;
+	  vertical-align: bottom;
+	}
+	tr:nth-child(even) {background-color: #c2c2c2;} /*cuidar oreden*/
+	tr:hover {background-color: red; } /*cuidar oreden*/
+
+	CSS Responsive Table:
+		style="overflow-x:auto;"
+
+CSS Layout:
+	CSS Display:
+		display: inline;
+		display: inline-block;
+		display: none; 
+		visibility: hidden;
+
+	CSS Width and max-width
+		max-width: 500px;
+	    margin: auto;
+
+	CSS The position
+		position:
+			static: default
+			relative: parte de su posición default
+			fixed: fija elementos y no toma herencias, y trabaja sobre el navegador
+			absolute: toma herencia excepto static
+			sticky: depende del scroll
+				div.sticky {
+				  position: sticky;
+				  top: 0;
+				  padding: 5px;
+				  background-color: #cae8ca;
+				  border: 2px solid #4CAF50;
+				}
+				<div class="sticky">I am sticky!</div>
+
+	CSS OverFlow:
+		overflow, overflow-x, overflow-y
+			visible - Fuera del elemento
+			hidden - Resto del contenido invisible
+			scroll - scrollbar staticas
+			auto - scrollbar auto
+
+	Float and clear:
+		float: (left, right, none, inherit (heredados) )
+		clear: (right, left, both)
+		Clearfix:
+			1: div class="Clearfix" .Clearfix { overflow: auto; }
+			2: 
+				.clearfix::after {
+					content: ""; 			 -> contenido faltante es vació
+					clear: both; 			 -> limpia hasta el último elemento (imagen)
+					display: (table, flex);  -> toma los elementos como tabla
+				}
+
+	Horizontal & Vertical Align:
+		Center Align Elements
+			.centerDiv {
+			  margin: auto;
+			  width: 50%;
+			  border: 3px solid green;
+			  padding: 10px;
+			}
+			.centerImg {
+			  display: block;
+			  margin-left: auto;
+			  margin-right: auto;
+			  width: 40%;
+			}
+
+		Left and Right Align - Using:
+			Position:
+				.right {
+				  position: absolute;
+				  right: 0px;
+				  width: 300px;
+				  border: 3px solid #73AD21;
+				  padding: 10px;
+				}
+			Float:
+				.right {
+				  float: right;
+				  width: 300px;
+				  border: 3px solid #73AD21;
+				  padding: 10px;
+				}
+
+		The clearfix Hack:
+			.clearfix {
+			  overflow: auto;
+			}
+
+		Center Vertically Using:
+			Padding:
+				.center {
+				  padding: 70px 0;
+				  border: 3px solid green;
+				}
+
+			line-height:
+				.center {
+				  line-height: 200px;
+				  height: 200px;
+				  border: 3px solid green;
+				  text-align: center;
+				}
+
+				.center p {
+				  line-height: 1.5;
+				  display: inline-block;
+				  vertical-align: middle;
+				}
+
+			Flexbox:
+				.center {
+				  display: flex;
+				  justify-content: center;
+				  align-items: center;
+				  height: 200px;
+				  border: 3px solid green;
+				}
+
+			Position & transform:
+				.center {
+				  height: 200px;
+				  position: relative;
+				  border: 3px solid green;
+				}
+
+				.center p {
+				  margin: 0;
+				  position: absolute;
+				  top: 50%;
+				  left: 50%;
+				  transform: translate(-50%, -50%);
+				}
+
+CSS Combinators: Relacion entre selectores simples (div, p, a, etc)
+	
+	Descendant Selector:
+		div p { background-color: yellow; }
+			Todos los <p> dentro del div
+
+	Child Selector (>):
+		div > p { background-color: yellow; }
+			Hijos <div><p></div> No <div><a><p></a></div>
+
+	Adjacent Sibling Selector (+)
+		div + p { background-color: yellow; }
+			un <p> despues de un div
+
+	General Sibling Selector (~):
+		div ~ p { background-color: yellow; }
+			Todos los <p> que no esten en un div
+
+CSS Pseudo-classes:
+	Anchor Pseudo-classes:
+		a:link 		-> unvisited link
+		a:visited 	-> visited link 
+		a:hover 	-> mouse over link
+		a:active 	-> selected link
+		:checked, :disabled, :empty, :enabled, :focus, :valid, :invalid,
+		:first-child, :nth-child(n), :first-of-type, :nth-of-type(n), 
+		:last-child, :nth-last-child(n), :last-of-type, :nth-last-of-type(n)
+		:read-only    -> <input readonly value="hello">
+		:read-write   -> sin readonly <input value="hello">
+		:lang(language) -> lenguaje espesificado -> :lang(esp)
+					<q>hola</q> -> "Hola"
+					q:lang(no) {
+					  quotes: "~" "~";
+					}
+					<q>hola</q> -> ~Hola~
+		:required
+		:optional  -> elementos no require
+		:not(selector)
+		:in-range, :out-of-range 	->
+				input:in-range {
+				  border: 2px solid yellow;
+				}
+				<input type="number" min="5" max="10" value="7">
+				<input type="number" min="5" max="10" value="20">
+		:only-of-type  -> elementos que incluyan una vez el elemento especificado:  Si<div><p><a></p><a></div> | No: <div><p><p></div>
+		:only-child    -> elementos con solo un elemento especificado
+		
+		:root      -> Selecciona el elemento raíz del documento
+		:target    -> da estilo al # link linkeado activo actual
+			:target {
+			  border: 2px solid #D4D4D4;
+			  background-color: #e5eecc;
+			}
+			<p><a href="#news1">Jump to New content 1</a></p>
+			<p><a href="#news2">Jump to New content 2</a></p>
+			<p id="news1"><b>New content 1...</b></p>
+			<p id="news2"><b>New content 2...</b></p>
+
+	Pseudo-classes and CSS Classes:
+		a.highlight:hover
+
+	Simple Tooltip Hover:
+		No visible:
+			p {
+			  display: none;
+			  background-color: yellow;
+			  padding: 20px;
+			}
+			
+		Visible:
+			div:hover p { display: block; }
+
+	The :first-child Pseudo-class:
+		p:first-child  -> Los primeros hijos de cada elemento
+		p i:first-child -> primer elemento <li> que este dentro de un <p>
+		p:first-child i  -> todos los <i> dentro del primer <p> de cada elemento 
+
+
+CSS Pseudo-elements
+	::first-letter	
+	::first-line	
+	::selection	    -> Caundo seleciona algo el usuario
+	::after			-> h1::after { content: url(smiley.gif); }    Imagen despues del <h1>
+	::before		-> h1::before { content: url(smiley.gif) ; }  Imagen antes del <h1>
+
+CSS Opacity / Transparency
+	img { opacity: 0.5; }
+
+	img:hover { opacity: 1.0; }
+
+
+CSS Image Sprites
+	Reduce peticiones al servidor
+		<img id="home" src="img_trans.gif" width="1" height="1">
+		#home {
+		  width: 46px;
+		  height: 44px;
+		  background: url(img_navsprites.gif) 0 0;  <-- Image Sprite
+		}
+		#next {
+		  background: url('img_navsprites_hover.gif') -91px 0;
+		}
+		#next a:hover {
+		  background: url('img_navsprites_hover.gif') -91px -45px;
+		}
+
+CSS Attribute Selectors
+	Stilear elemenots con atributos o valores de atributos.
+		a[target], a [target="_blank"] { background-color: yellow; }  -> <a  target="_blank">
+		
+		[title~=flower] { border: 5px solid yellow; }  	-> <img src="" title="flower">
+		 
+		[class|=top] { background: yellow; }	 		-> atributos que empiece con el valor class="top-header", "top-text"
+		 
+		[class^|=top] 	 -> atributos que incluyan al inicio valor: class="top-header", "top-text", "topcontent"
+
+		[class$="test"]  -> atributos que incluyan al final el valor: class="first_test"
+
+		[class*="te"]    -> atributos que incluyan el valor:  class="first_test", my-test", mytest
+
+		input[type="text"]
+
+		input[type="button"]
+
+CSS Counters:
+	body { counter-reset: section; }
+
+	h1::before {
+	  counter-increment: section;
+	  content: "Section " counter(section) ". ";
+	}
+
+	h2::before {
+	  counter-increment: subsection;
+	  content: counter(section) "." counter(subsection) " ";
+	}
+	<h1>Using CSS Counters:</h1>  -> Section 1: Using CSS Counters:
+	<h2>HTML Tutorial</h2>		  -> 1.1 HTML Tutorial
+	<h2>CSS Tutorial</h2>		  -> 1.2 CSS Tutorial
+	<h1>HTML Tutorial</h2>		  -> Section 2: HTML Tutorial
+
+Layout:
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	body
+		margin: 0;
+	.header 
+	  background-color: #f1f1f1;
+	  padding: 20px;
+	  text-align: center;
+	<div class="header">
+	  <h1>Header</h1>
+	</div>
+
+
+Properties:
+	Content:
+		content: (img, texto, inherit, initial, normal, none)
+			Counter -> Agregar un numero acendente en todos los p
+				p {
+				  counter-increment: myIndex;
+				}
+				p::before {
+				  content:counter(myIndex);
+				}
+			attr(attribute)	Contenido de un atributo
+				content: " (" attr(href) ")"; -> muestra el url en un a sin escribirlo
+
+			open-quote
+				p::before {
+				  content: open-quote;
+				}
+
+				p::after {
+				  content: close-quote;
+				}

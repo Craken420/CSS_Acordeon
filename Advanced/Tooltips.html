@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		* {
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: Arial;
+			font-size: 12px;
+			background-color: #f1f1f1;
+			padding: 20px;
+		}
+
+		.heading {
+			padding: 30px;
+			background-color: #aaa;
+			text-align: center;
+		}
+
+		.tooltip {
+			position: relative;
+			display: inline-block;
+			border-bottom: 1px dotted black;
+		}
+
+		.tooltip .tooltip-text {
+			visibility: hidden;
+			
+			background-color: black;
+			color: white;
+			text-align: center;
+			padding: 5px 0;
+			border-radius: 6px;
+			position: absolute;
+			z-index: 1;
+
+			width: 120px;
+			bottom: 100%;
+			left: 50%;
+			margin-left: -60px;
+
+		}
+
+		.tooltip:hover .tooltip-text {
+			visibility: visible;
+		}
+
+		.tooltip .tooltip-text::after {
+			position: absolute;
+			content: " ";
+			top: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: black transparent transparent  transparent; 
+		}
+	</style>
+</head>
+<body>
+	<div class="heading">
+		<div class="tooltip">
+			Tooltip
+			<div class="tooltip-text">
+				This is the description of the tooltip
+			</div>
+		</div>
+	</div>
+</body>
+</html>

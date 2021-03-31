@@ -1,0 +1,327 @@
+CSS 2D Transforms
+
+	Transforms Methods:
+	transform:	translate(50px,100px); /* Standard syntax */
+				rotate() -> transform: rotate(20deg);
+				rotateX(150deg);  						-> efecto reflejo de agua
+				rotateY(150deg);						-> efecto reversa
+				rotateZ(150deg);						-> rota por derecha inferior
+				scaleX(2);
+				scaleY(2);
+				scale(0.5, 0.5);
+				skewX(20deg); -> Rectangulo a trapesio - Linea horizontal estable
+				skewY(20deg); -> Rectangulo a rombo - Linea vertical estable
+				skewY(20deg);
+				matrix(1, -0.3, 0, 1, 0, 0);
+					-> matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+	
+	
+
+CSS 3D Transforms
+	CSS Transform Properties:
+		transform 												  -> 2D o 3D transformación
+		transform-origin										  -> Origen de la transformación
+		transform-style: (flat, preserve-3d, initial, inherits)   -> Deje que los elementos secundarios transformados conserven las transformaciones 3D
+		perspective												  -> Vista en perspectiva para un elemento transformado 3D. ver cercano ___ lejano _
+		perspective-origin										  -> Define desde qué posición está mirando el usuario el elemento posicionado en 3D
+		backface-visibility										  -> Define si un elemento debe ser visible cuando no está frente a la pantalla
+
+	CSS 3D Transform Methods	
+		matrix3d				->	(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)	-> 3D 4x4 matrix of 16 values
+		translate3d(x,y,z)		->  Translado 3D
+		translateX(x)			->  Translado 3D eje-X
+		translateY(y)			->  Translado 3D eje-Y
+		translateZ(z)			->  Translado 3D eje-Z
+		scale3d(x,y,z)			->  Transformación escala 3D
+		scaleX(x)				->  Transformación escala 3D eje-X
+		scaleY(y)				->  Transformación escala 3D eje-Y
+		scaleZ(z)				->  Transformación escala 3D eje-Z
+		rotate3d(x,y,z,angle)	->  Rotación 3D
+		rotateX(angle)			->  Rotación 3D eje-Y
+		rotateY(angle)			->  Rotación 3D eje-X
+		rotateZ(angle)			->  Rotación 3D eje-Z
+		perspective(n)			->  Vista en perspectiva para un elemento transformado 3D
+
+CSS Transitions:
+	Transition:
+		div
+		  width: 100px; height: 100px; background: red;
+		  transition: width 5s;  -> Indica la propiedad y el tiempo del lapso de transición
+		  transition-delay: 1s;  -> Indica el tiempo que tarda en ejecutarse la transición
+
+		#div1 transition-timing-function: (linear, ease, ease-in, ease-out, ease-in-out); -> Indica la rapidez al inicio o final
+		
+		div:hover
+			width: 300px;
+
+		<div id="div1">linear</div>
+
+		div
+		  width: 100px;
+		  height: 100px;
+		  background: red;
+		  transition-property: width;
+		  transition-duration: 2s;
+		  transition-timing-function: linear;
+		  transition-delay: 1s;
+		  	-> transition: width 2s linear 1s;
+
+		div:hover
+		  width: 300px;
+
+	Transition + Transform:
+
+		div
+		  width: 100px;
+		  height: 100px;
+		  background: red;
+		  transition: width 2s, height 2s, transform 1s;
+
+		div:hover
+		  width: 300px;
+		  height: 300px;
+		  transform: rotate(180deg);
+
+CSS Animations
+	
+	@keyframes Rule  -> enlazar elemento
+		1:
+			div
+			  width: 100px; height: 100px; background-color: red;
+			  animation-name: example;  <- Animación declarada
+			  animation-duration: 4s;   <- Tiempo
+
+			@keyframes example               <- Declarando animación
+			  from {background-color: red;}
+			  to {background-color: yellow;}
+			
+		2:
+			div
+			  width: 100px; height: 100px; background-color: red;
+			  animation-name: example;
+			  animation-duration: 4s;
+
+			@keyframes example
+			  0%   {background-color: red;}
+			  25%  {background-color: yellow;}
+			  50%  {background-color: blue;}
+			  100% {background-color: green;}
+		3:
+			div
+			  width: 100px; height: 100px; background-color: red;
+			  position: relative;
+			  animation-name: example;
+			  animation-duration: 4s;
+
+			@keyframes example
+			  0%   {background-color:red; left:0px; top:0px;}
+			  25%  {background-color:yellow; left:200px; top:0px;}
+			  50%  {background-color:blue; left:200px; top:200px;}
+			  75%  {background-color:green; left:0px; top:200px;}
+			  100% {background-color:red; left:0px; top:0px;}
+	
+
+	animation-delay: [2s, -2s (Corta -> En un cuadrado corta los ultimos 2 lados) ]
+
+	animation-iteration-count: (3, infinite)	-> Times Run
+
+	animation-fill-mode: (none, forwards, backwards, animation-delay, both)
+
+	animation-direction: normal 		   - default
+						 reverse 		   - Reversa
+						 alternate 		   - Adelnate -> atras
+						 alternate-reverse - Atras    -> adelnate
+
+	animation-timing-function: (linear, ease, ease-in, ease-out, ease-in-out)
+
+	Shorthand:
+		animation-name: example;
+		animation-duration: 5s;
+		animation-timing-function: linear;
+		animation-delay: 2s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		
+	 		animation: example 5s linear 2s infinite alternate;
+
+CSS Flex
+	.flex-container {
+		display: flex;
+		flex-direction: (column, column-reverse, row, row-reverse)
+		flex-wrap: (wrap "ajustar", nowrap "default", wrap-reverse
+		flex-flow: row wrap; (flex-direction and flex-wrap)
+		justify-content (width): ( center, flex-start, flex-end, space-around, space-between)
+		align-items: ( center, flex-start, flex-end, stretch, baseline "Base de alineación del elemento") 
+		align-content (heigth): ( center, flex-start, flex-end, space-around, space-between, stretch)
+		Perfect Centering: justify-content: center; align-items: center;
+	}
+
+	CSS Flex Items: {
+		<div class="flex-container">
+		  <div style="
+		  	order: 3;
+		  	flex-grow: 1; --crecer
+		  	flex-shrink: 0; --contraer
+		  	flex-basis:200px --tamaño inicial
+		  	align-self: ( center, flex-start, flex-end, stretch, baseline "Base de alineación del elemento")
+		  ">1</div>
+		  <div style="order: 2; flex-grow: 2">2</div>
+		  <div style="order: 4; flex-grow: 8">3</div>
+		  <div style="order: 1; flex-grow: 1">4</div>
+		</div>
+	}
+
+	Shorthand: flex-grow, flex-shrink, and flex-basis
+		flex: 0 0 200px;
+
+	Responsive:
+		.flex-container {
+		  display: flex;
+		  flex-direction: row;
+		}
+
+		/* Responsive layout - makes a one column layout instead of a two-column layout */
+		@media (max-width: 800px) {
+		  .flex-container {
+		    flex-direction: column;
+		  }
+		}
+
+		Another example:
+			.flex-container {
+			  display: flex;
+			  flex-wrap: wrap;
+			}
+
+			.flex-item-left {
+			  flex: 90%;
+			}
+
+			.flex-item-right {
+			  flex: 10%;
+			}
+
+			/* Responsive layout - makes a one column-layout instead of a two-column layout */
+			@media (max-width: 800px) {
+			  .flex-item-right, .flex-item-left {
+			    flex: 100%;
+			  }
+			}
+			<div class="flex-container">
+			  <div class="flex-item-left">1</div>
+			  <div class="flex-item-right">2</div>
+			</div>
+
+CSS Tooltip
+	.tooltip
+	  position: relative;
+	  display: inline-block;
+	  border-bottom: 1px dotted black;
+
+	  Another example:
+		 .tooltip .tooltiptext {		<- Arrow
+		  visibility: hidden;
+		  width: 120px;
+		  background-color: black;
+		  color: #fff;
+		  text-align: center;
+		  border-radius: 6px;
+		  padding: 5px 0;
+		  
+		  /* Position the tooltip */
+		  position: absolute;
+		  z-index: 1;
+		  top: 100%;  <- Colocar debajo		bottom: 100%;  <- Colocar arriva
+		  left: 50%;					<- Centra 
+		  margin-left: -60px;			<- Mitad de width
+		}
+
+	.tooltip .tooltiptext			<- Tooltip
+	  visibility: hidden;
+	  width: 120px;
+	  background-color: black;
+	  color: #fff;
+	  text-align: center;
+	  border-radius: 6px;
+	  padding: 5px 0;
+	  position: absolute;
+	  z-index: 1;
+	  top: -5px;
+	  right: 110%;
+	  opacity: 0;					 <- Sombra - 1 seg, ir de 0% - 100% opac
+	  transition: opacity 1s;
+
+	.tooltip .tooltiptext::after     <- Arrow
+	  content: "";
+	  position: absolute;
+	  top: 50%;						 <- Lugar de flecha
+	  left: 100%;					 <- Lugar de flecha
+	  margin-top: -5px;				 <- Ligado al tamaño
+	  border-width: 5px;			 <- Ligado al tamaño
+	  border-style: solid;
+	  border-color: transparent transparent transparent black;
+	
+	.tooltip:hover .tooltiptext
+	  visibility: visible;
+	
+	</style>
+	<div class="tooltip">Hover over me
+	  <span class="tooltiptext">Tooltip text</span>
+	</div>
+
+CSS Styling Images
+	Thumbnail Images
+		img
+		  border: 1px solid #ddd;
+		  border-radius: 4px;			<- Rounded
+		  padding: 5px;
+		  width: 150px;
+
+		img:hover
+		  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+
+	Responsive:
+		img 
+		  max-width: 100%;
+		  height: auto;
+		<img width="1000" height="300">
+
+	Center:
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+
+	Cards:
+		body {margin:25px;}
+
+		div.polaroid
+		  width: 50%;
+		  background-color: white;
+		  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		  margin-bottom: 25px;
+
+		div.container
+		  text-align: center;
+		  padding: 10px 20px;
+
+		<div class="polaroid">
+		  <img src="img_5terre.jpg" alt="5 Terre" style="width:100%">
+		  <div class="container"><p>Cinque Terre</p></div>
+		</div>
+		<div class="polaroid">
+		  <img src="lights600x400.jpg" alt="Norther Lights" style="width:100%">
+		  <div class="container"><p>Northern Lights</p></div>
+		</div>
+
+	Transparent:
+		opacity: 0.2, 0.5, 1 (default)
+
+	Filters:
+		filter: grayscale(100%);
+			blur(4px), brightness(250%), contrast(180%), grayscale(100%),
+			hue-rotate(180deg), invert(100%), opacity(50%), saturate(7),
+			sepia(100%), drop-shadow(8px 8px 10px green)
+
+Image Hover Overlay
+	transform: scaleX(-1);  -> Flip an Image
